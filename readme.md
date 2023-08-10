@@ -644,6 +644,25 @@ export class AppRoutingModule { }
 ````
 
 
+# Running the Application
+
+- Now Run the Customer MEF App from its folder path from the Command / Terminal Windows
+
+ng serve --port 4200 
+
+- Now Run the Inventory MEF App from its folder path from the Command / Terminal Windows
+
+ng serve --port 4300 
+
+- Now Run the Orders MEF App from its folder path from the Command / Terminal Windows
+
+ng serve --port 4400 
+
+- Run the shell project
+
+ng serve --port 5200 -o
+
+This will run the shell project with Customers, Inventory, and Orders app in it.
 
 
 
