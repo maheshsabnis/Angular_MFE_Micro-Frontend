@@ -1,0 +1,20 @@
+<h2>List of Customer List</h2>
+
+<table class="table table-bordered table-striped table-warning">
+    <thead>
+        <tr class="table-dark">
+          <th>Customer Id</th>
+          <th>Customer Name</th>
+          <th>Email</th>
+          <th>Mobile</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let customer of Customers">
+           <td>{{customer.CustomerId}}</td>
+           <td>{{customer.CustomerName}}</td>
+           <td>{{customer.Email}}</td>
+           <td>{{customer.Mobile}}</td>
+        </tr>
+    </tbody>
+</table>

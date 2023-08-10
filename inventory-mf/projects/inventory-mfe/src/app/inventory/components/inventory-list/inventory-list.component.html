@@ -1,0 +1,20 @@
+<h1>The Inventory List</h1>
+
+<table class="table table-bordered table-striped">
+   <thead class="table-danger">
+      <tr>
+         <th>Item Id</th>
+         <th>Item Name</th>
+         <th>Unit Quantity</th>
+         <th>Available Quantity</th>
+      </tr>
+   </thead>
+   <tbody class="table-dark">
+      <tr *ngFor="let inventory of InventoryList">
+          <td>{{inventory.ItemId}}</td>
+          <td>{{inventory.ItemName}}</td>
+          <td>{{inventory.UnitPrice}}</td>
+          <td>{{inventory.AvailableQuantity}}</td>
+      </tr>
+   </tbody>
+</table>

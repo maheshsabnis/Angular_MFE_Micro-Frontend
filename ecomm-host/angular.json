@@ -1,0 +1,140 @@
+{
+	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+	"version": 1,
+	"newProjectRoot": "projects",
+	"projects": {
+		"ecomm-shell": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:class": {
+					"skipTests": true
+				},
+				"@schematics/angular:component": {
+					"skipTests": true
+				},
+				"@schematics/angular:directive": {
+					"skipTests": true
+				},
+				"@schematics/angular:guard": {
+					"skipTests": true
+				},
+				"@schematics/angular:interceptor": {
+					"skipTests": true
+				},
+				"@schematics/angular:pipe": {
+					"skipTests": true
+				},
+				"@schematics/angular:resolver": {
+					"skipTests": true
+				},
+				"@schematics/angular:service": {
+					"skipTests": true
+				}
+			},
+			"root": "projects/ecomm-shell",
+			"sourceRoot": "projects/ecomm-shell/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/ecomm-shell",
+						"index": "projects/ecomm-shell/src/index.html",
+						"main": "projects/ecomm-shell/src/main.ts",
+						"polyfills": [
+							"zone.js"
+						],
+						"tsConfig": "projects/ecomm-shell/tsconfig.app.json",
+						"assets": [
+							"projects/ecomm-shell/src/favicon.ico",
+							"projects/ecomm-shell/src/assets"
+						],
+						"styles": [
+							"projects/ecomm-shell/src/styles.css",
+							"./node_modules/bootstrap/dist/css/bootstrap.min.css"
+						],
+						"scripts": [
+							"./node_modules/jquery/dist/jquery.min.js",
+							"./node_modules/bootstrap/dist/js/bootstrap.min.js"
+						],
+						"extraWebpackConfig": "projects/ecomm-shell/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "2kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/ecomm-shell/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "ecomm-shell:build:production",
+							"extraWebpackConfig": "projects/ecomm-shell/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "ecomm-shell:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 5200,
+						"publicHost": "http://localhost:5200",
+						"extraWebpackConfig": "projects/ecomm-shell/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "ecomm-shell:build",
+						"extraWebpackConfig": "projects/ecomm-shell/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						],
+						"tsConfig": "projects/ecomm-shell/tsconfig.spec.json",
+						"assets": [
+							"projects/ecomm-shell/src/favicon.ico",
+							"projects/ecomm-shell/src/assets"
+						],
+						"styles": [
+							"projects/ecomm-shell/src/styles.css"
+						],
+						"scripts": []
+					}
+				}
+			}
+		}
+	},
+	"cli": {
+		"analytics": "e1788b10-0534-4c87-867b-239cb3c85efe"
+	}
+}

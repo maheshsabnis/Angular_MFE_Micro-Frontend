@@ -1,0 +1,19 @@
+<h1>List of Orders</h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+     <tr class="table-primary">
+        <th>Order Id</th>
+        <th>Item Name</th>
+        <th>Customer Name</th>
+     </tr>
+  </thead>
+  <tbody class="table-dark">
+       <tr *ngFor="let order of Orders">
+         <td>{{order.OrderId}}</td>
+         <td>{{order.ItemName}}</td>
+         <td>{{order.CustomerName}}</td>
+       </tr>
+  </tbody>
+</table>
+
