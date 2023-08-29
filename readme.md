@@ -6,7 +6,7 @@ ng new customer-mf --create-application false --skip-tests
 
 - Navigate to customer-mf directory  and create a project 
 
-ng g app auth-mfe --skip-tests --routing
+ng g app customer-mfe --skip-tests --routing
 
 
  
